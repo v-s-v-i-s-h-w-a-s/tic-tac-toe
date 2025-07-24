@@ -130,8 +130,8 @@ class CLI:
                 print("\nGoodbye!")
                 sys.exit(0)
             except EOFError:
-                print("\nNo interactive terminal detected. Use --help for usage information.")
-                print("To run interactively with Docker, use: docker run -it <image_name>")
+                print("\nNo interactive terminal detected. Use --help for usage.")
+                print("To run interactively with Docker, use: docker run -it <image>")
                 sys.exit(1)
 
     def run(self):
@@ -152,13 +152,13 @@ class CLI:
             # Ask if they want to play again
             print("\n" + "=" * 50)
             try:
-                play_again = (
-                    input("Would you like to play another game? (y/n): ").strip().lower()
-                )
+                play_again = input(
+                    "Would you like to play another game? (y/n): "
+                ).strip().lower()
             except (EOFError, KeyboardInterrupt):
                 print("\nGoodbye!")
                 break
-                
+
             if play_again not in ["y", "yes"]:
                 print("Thanks for playing! Goodbye!")
                 break
