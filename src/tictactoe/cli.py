@@ -24,33 +24,42 @@ class CLI:
     def get_user_move(self) -> Tuple[int, int]:
         """
         Get move input from user.
-        
+
         Returns:
             Tuple of (row, col) representing the user's move
         """
         while True:
             try:
-                move_input = input(f"Player {self.board.current_player}, enter your move (row,col) [0-2,0-2]: ").strip()
-                
-                if ',' not in move_input:
+                move_input = input(
+                    f"Player {self.board.current_player}, "
+                    f"enter your move (row,col) [0-2,0-2]: "
+                ).strip()
+
+                if "," not in move_input:
                     print("Please enter your move in the format: row,col (e.g., 1,2)")
                     continue
-                    
-                row_str, col_str = move_input.split(',', 1)
+
+                row_str, col_str = move_input.split(",", 1)
                 row, col = int(row_str.strip()), int(col_str.strip())
-                
+
                 if not self.board.is_valid_position(row, col):
                     print("Invalid position! Please enter numbers between 0 and 2.")
                     continue
-                    
+
                 if not self.board.is_position_empty(row, col):
-                    print("That position is already taken! Please choose an empty position.")
+                    print(
+                        "That position is already taken! "
+                        "Please choose an empty position."
+                    )
                     continue
-                    
+
                 return row, col
-                
+
             except ValueError:
-                print("Invalid input! Please enter numbers in the format: row,col (e.g., 1,2)")
+                print(
+                    "Invalid input! Please enter numbers in the format: "
+                    "row,col (e.g., 1,2)"
+                )
             except KeyboardInterrupt:
                 print("\nGame interrupted by user.")
                 sys.exit(0)
@@ -60,12 +69,12 @@ class CLI:
         print("=== Tic-Tac-Toe: Human vs Human ===")
         print("Enter moves as 'row,col' where both row and col are between 0-2")
         print("For example: '1,1' for the center position")
-        
+
         while not self.board.is_game_over():
             self.display_board()
             row, col = self.get_user_move()
             self.board.make_move(row, col)
-            
+
         self.display_board()
         self.show_game_result()
 
@@ -74,10 +83,10 @@ class CLI:
         print("=== Tic-Tac-Toe: Human vs AI ===")
         print("You are X, AI is O")
         print("Enter moves as 'row,col' where both row and col are between 0-2")
-        
+
         while not self.board.is_game_over():
             self.display_board()
-            
+
             if self.board.current_player == "X":
                 # Human turn
                 row, col = self.get_user_move()
@@ -88,7 +97,7 @@ class CLI:
                 row, col = self.ai_player.get_best_move(self.board)
                 print(f"AI plays: {row},{col}")
                 self.board.make_move(row, col)
-                
+
         self.display_board()
         self.show_game_result()
 
@@ -106,11 +115,11 @@ class CLI:
         print("1. Human vs Human")
         print("2. Human vs AI")
         print("3. Quit")
-        
+
         while True:
             try:
                 choice = input("Enter your choice (1-3): ").strip()
-                if choice in ['1', '2', '3']:
+                if choice in ["1", "2", "3"]:
                     return int(choice)
                 else:
                     print("Please enter 1, 2, or 3")
@@ -122,7 +131,7 @@ class CLI:
         """Run the main game loop."""
         while True:
             choice = self.show_menu()
-            
+
             if choice == 1:
                 self.board.reset()
                 self.play_human_vs_human()
@@ -132,11 +141,13 @@ class CLI:
             elif choice == 3:
                 print("Thanks for playing! Goodbye!")
                 break
-                
+
             # Ask if they want to play again
-            print("\n" + "="*50)
-            play_again = input("Would you like to play another game? (y/n): ").strip().lower()
-            if play_again not in ['y', 'yes']:
+            print("\n" + "=" * 50)
+            play_again = (
+                input("Would you like to play another game? (y/n): ").strip().lower()
+            )
+            if play_again not in ["y", "yes"]:
                 print("Thanks for playing! Goodbye!")
                 break
 
