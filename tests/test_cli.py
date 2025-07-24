@@ -114,11 +114,11 @@ class TestCLI:
     def test_show_game_result_tie(self):
         """Test showing game result when it's a tie."""
         cli = CLI()
-        # Create a tie game
+        # Create a tie game (no winner, board full)
         moves = [
             (0, 0, "X"), (0, 1, "O"), (0, 2, "X"),
-            (1, 0, "O"), (1, 1, "X"), (1, 2, "O"),
-            (2, 0, "X"), (2, 1, "O"), (2, 2, "O")
+            (1, 0, "O"), (1, 1, "O"), (1, 2, "X"),
+            (2, 0, "X"), (2, 1, "X"), (2, 2, "O")
         ]
         
         for row, col, player in moves:
