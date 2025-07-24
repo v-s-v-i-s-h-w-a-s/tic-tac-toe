@@ -1,9 +1,6 @@
 # 🚀 Publishing Setup Guide
 
-This guide will help you publish your tic-tac-toe project to both **Docker Hub** and **PyP### Docker Hub Stats:
-- Visit: `https://hub.docker.com/r/vishwas812/tic-tac-toe`
-- View pull statistics
-- Manage tagsso you can see it publicly available.
+This guide will help you publish your tic-tac-toe project to both **Docker Hub** and **PyPI** so you can see it publicly available.
 
 ## 📦 **1. PyPI (Python Package Index) Setup**
 
