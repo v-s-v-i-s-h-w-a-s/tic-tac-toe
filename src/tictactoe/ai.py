@@ -32,10 +32,10 @@ class AIPlayer:
         """
         if self.difficulty == "easy":
             return self._get_random_move(board)
-        elif self.difficulty == "medium":
+        if self.difficulty == "medium":
             return self._get_medium_move(board)
-        else:  # hard
-            return self._get_minimax_move(board)
+        # hard
+        return self._get_minimax_move(board)
 
     def _get_random_move(self, board: Board) -> Tuple[int, int]:
         """Get a random valid move."""
@@ -95,9 +95,9 @@ class AIPlayer:
         # Terminal states
         if winner == self.player_symbol:
             return 10 - depth
-        elif winner == self.opponent_symbol:
+        if winner == self.opponent_symbol:
             return depth - 10
-        elif board.is_full():
+        if board.is_full():
             return 0
 
         if is_maximizing:
@@ -108,14 +108,14 @@ class AIPlayer:
                 score = self._minimax(board_copy, depth + 1, False)
                 best_score = max(score, best_score)
             return best_score
-        else:
-            best_score = float("inf")
-            for row, col in board.get_empty_positions():
-                board_copy = board.copy()
-                board_copy.make_move(row, col, self.opponent_symbol)
-                score = self._minimax(board_copy, depth + 1, True)
-                best_score = min(score, best_score)
-            return best_score
+
+        best_score = float("inf")
+        for row, col in board.get_empty_positions():
+            board_copy = board.copy()
+            board_copy.make_move(row, col, self.opponent_symbol)
+            score = self._minimax(board_copy, depth + 1, True)
+            best_score = min(score, best_score)
+        return best_score
 
     def _find_winning_move(
         self, board: Board, player: str

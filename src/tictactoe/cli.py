@@ -121,8 +121,7 @@ class CLI:
                 choice = input("Enter your choice (1-3): ").strip()
                 if choice in ["1", "2", "3"]:
                     return int(choice)
-                else:
-                    print("Please enter 1, 2, or 3")
+                print("Please enter 1, 2, or 3")
             except KeyboardInterrupt:
                 print("\nGoodbye!")
                 sys.exit(0)
