@@ -40,7 +40,7 @@ class AIPlayer:
     def _get_random_move(self, board: Board) -> Tuple[int, int]:
         """Get a random valid move."""
         empty_positions = board.get_empty_positions()
-        return random.choice(empty_positions)
+        return random.choice(empty_positions) #NOSONAR
 
     def _get_medium_move(self, board: Board) -> Tuple[int, int]:
         """
