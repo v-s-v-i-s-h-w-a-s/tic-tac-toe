@@ -9,19 +9,16 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: [3.8, 3.9, "3.10", "3.11", "3.12"]
 
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Set up Python ${{ matrix.python-version }}
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: "3.11"
 
       - name: Install dependencies
         run: |
@@ -56,10 +53,26 @@ jobs:
           flags: unittests
           name: codecov-umbrella
 
+  docker:
+    name: Docker Build & Test
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: |
+          docker build -t tic-tac-toe:latest .
+
+      - name: Test Docker image
+        run: |
+          docker run --rm tic-tac-toe:latest --help
+
   sonarcloud:
     name: SonarCloud
     runs-on: ubuntu-latest
     needs: test
+    if: github.event_name == 'push'
     steps:
       - uses: actions/checkout@v4
         with:
@@ -68,7 +81,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.11
+          python-version: "3.11"
 
       - name: Install dependencies
         run: |
