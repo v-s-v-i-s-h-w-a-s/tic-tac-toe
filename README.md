@@ -3,8 +3,11 @@
 [![CI](https://github.com/v-s-v-i-s-h-w-a-s/tic-tac-toe/workflows/CI/badge.svg)](https://github.com/v-s-v-i-s-h-w-a-s/tic-tac-toe/actions)
 [![Coverage](https://codecov.io/gh/v-s-v-i-s-h-w-a-s/tic-tac-toe/branch/main/graph/badge.svg)](https://codecov.io/gh/v-s-v-i-s-h-w-a-s/tic-tac-toe)
 [![PyPI version](https://badge.fury.io/py/tictactoe-vish.svg)](https://badge.fury.io/py/tictactoe-vish)
+[![Python versions](https://img.shields.io/pypi/pyversions/tictactoe-vish)](https://pypi.org/project/tictactoe-vish/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/vishwas812/tic-tac-toe)](https://hub.docker.com/r/vishwas812/tic-tac-toe)
+[![Docker Image Size](https://img.shields.io/docker/image-size/vishwas812/tic-tac-toe/latest)](https://hub.docker.com/r/vishwas812/tic-tac-toe)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A well-tested Tic-Tac-Toe game implementation in Python with a CLI interface and AI opponent.
 
