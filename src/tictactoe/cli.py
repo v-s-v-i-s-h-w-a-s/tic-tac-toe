@@ -165,22 +165,22 @@ Examples:
 Game Modes:
   1. Human vs Human - Two players take turns
   2. Human vs AI    - Play against computer opponent
-  
+
 AI Difficulty Levels:
   • Easy   - Random moves
-  • Medium - Blocks wins and takes available wins  
+  • Medium - Blocks wins and takes available wins
   • Hard   - Uses minimax algorithm for optimal play
         """,
     )
-    
+
     parser.add_argument(
-        "--version", 
-        action="version", 
+        "--version",
+        action="version",
         version="tic-tac-toe 0.1.0"
     )
-    
-    args = parser.parse_args()
-    
+
+    parser.parse_args()
+
     try:
         cli = CLI()
         cli.run()

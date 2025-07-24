@@ -233,7 +233,8 @@ class TestCLI:
         """Test main function."""
         from src.tictactoe.cli import main
 
-        with patch("src.tictactoe.cli.CLI") as mock_cli_class:
+        with patch("src.tictactoe.cli.CLI") as mock_cli_class, \
+             patch("sys.argv", ["tictactoe"]):
             mock_cli_instance = MagicMock()
             mock_cli_class.return_value = mock_cli_instance
 
