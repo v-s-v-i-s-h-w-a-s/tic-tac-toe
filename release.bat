@@ -58,7 +58,7 @@ echo.
 echo 🔗 Monitor your release:
 echo   • GitHub: https://github.com/v-s-v-i-s-h-w-a-s/tic-tac-toe/releases
 echo   • PyPI: https://pypi.org/project/tictactoe-vish/
-echo   • Docker Hub: https://hub.docker.com/r/vishwas/tic-tac-toe
+echo   • Docker Hub: https://hub.docker.com/r/vishwas812/tic-tac-toe
 echo.
 echo 🚀 Happy releasing!
 

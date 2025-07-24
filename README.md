@@ -3,7 +3,7 @@
 [![CI](https://github.com/v-s-v-i-s-h-w-a-s/tic-tac-toe/workflows/CI/badge.svg)](https://github.com/v-s-v-i-s-h-w-a-s/tic-tac-toe/actions)
 [![Coverage](https://codecov.io/gh/v-s-v-i-s-h-w-a-s/tic-tac-toe/branch/main/graph/badge.svg)](https://codecov.io/gh/v-s-v-i-s-h-w-a-s/tic-tac-toe)
 [![PyPI version](https://badge.fury.io/py/tictactoe-vish.svg)](https://badge.fury.io/py/tictactoe-vish)
-[![Docker Pulls](https://img.shields.io/docker/pulls/vishwas/tic-tac-toe)](https://hub.docker.com/r/vishwas/tic-tac-toe)
+[![Docker Pulls](https://img.shields.io/docker/pulls/vishwas812/tic-tac-toe)](https://hub.docker.com/r/vishwas812/tic-tac-toe)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 A well-tested Tic-Tac-Toe game implementation in Python with a CLI interface and AI opponent.
@@ -34,11 +34,11 @@ pip install tictactoe-vish
 
 ```bash
 # Run directly
-docker run -it vishwas/tic-tac-toe:latest
+docker run -it vishwas812/tic-tac-toe:latest
 
 # Or pull first
-docker pull vishwas/tic-tac-toe:latest
-docker run -it vishwas/tic-tac-toe:latest
+docker pull vishwas812/tic-tac-toe:latest
+docker run -it vishwas812/tic-tac-toe:latest
 ```
 
 ### Development Installation

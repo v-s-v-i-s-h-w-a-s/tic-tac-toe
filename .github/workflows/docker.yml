@@ -10,7 +10,7 @@ on:
 
 env:
   REGISTRY: docker.io
-  IMAGE_NAME: vishwas/tic-tac-toe
+  IMAGE_NAME: vishwas812/tic-tac-toe
 
 jobs:
   build-and-push:

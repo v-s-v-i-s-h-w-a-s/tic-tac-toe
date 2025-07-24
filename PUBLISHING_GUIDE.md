@@ -1,6 +1,9 @@
 # 🚀 Publishing Setup Guide
 
-This guide will help you publish your tic-tac-toe project to both **Docker Hub** and **PyPI** so you can see it publicly available.
+This guide will help you publish your tic-tac-toe project to both **Docker Hub** and **PyP### Docker Hub Stats:
+- Visit: `https://hub.docker.com/r/vishwas812/tic-tac-toe`
+- View pull statistics
+- Manage tagsso you can see it publicly available.
 
 ## 📦 **1. PyPI (Python Package Index) Setup**
 
@@ -35,7 +38,7 @@ This guide will help you publish your tic-tac-toe project to both **Docker Hub**
 
 ### Step 1: Create Docker Hub Account
 1. Go to [hub.docker.com](https://hub.docker.com/signup)
-2. Create account with username (e.g., `vishwas`)
+2. Create account with username (e.g., `vishwas812`)
 3. Verify email
 
 ### Step 2: Create Access Token
@@ -48,7 +51,7 @@ This guide will help you publish your tic-tac-toe project to both **Docker Hub**
 ### Step 3: Add Docker Credentials to GitHub Secrets
 1. In your GitHub repository settings
 2. Add these secrets:
-   - Name: `DOCKER_USERNAME`, Value: Your Docker Hub username
+   - Name: `DOCKER_USERNAME`, Value: Your Docker Hub username (e.g., `vishwas812`)
    - Name: `DOCKER_PASSWORD`, Value: Your Docker Hub access token
 
 ## 🏷️ **3. Create Your First Release**
@@ -75,7 +78,7 @@ This guide will help you publish your tic-tac-toe project to both **Docker Hub**
    
    ## Docker
    ```bash
-   docker run vishwas/tic-tac-toe:latest
+   docker run vishwas812/tic-tac-toe:latest
    ```
    ```
 6. Click **Publish release**
@@ -96,7 +99,7 @@ git push origin v0.1.0
 ### After Pushing to Main/Develop:
 1. **Docker Workflow** triggers automatically
 2. Image builds and pushes to Docker Hub
-3. Available at: `https://hub.docker.com/r/vishwas/tic-tac-toe`
+3. Available at: `https://hub.docker.com/r/vishwas812/tic-tac-toe`
 
 ## 🎯 **5. Test Your Published Packages**
 
@@ -108,8 +111,8 @@ tictactoe --help
 
 ### Test Docker Image:
 ```bash
-docker pull vishwas/tic-tac-toe:latest
-docker run --rm -it vishwas/tic-tac-toe:latest
+docker pull vishwas812/tic-tac-toe:latest
+docker run --rm -it vishwas812/tic-tac-toe:latest
 ```
 
 ## 🔍 **6. Monitor Your Packages**
