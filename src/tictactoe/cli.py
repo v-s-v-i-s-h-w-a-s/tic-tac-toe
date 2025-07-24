@@ -1,5 +1,6 @@
 """Command-line interface for Tic-Tac-Toe game."""
 
+import argparse
 import sys
 from typing import Tuple
 
@@ -153,6 +154,33 @@ class CLI:
 
 def main():
     """Main entry point for the CLI application."""
+    parser = argparse.ArgumentParser(
+        description="A modern Tic-Tac-Toe game with AI opponent",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  tictactoe            # Start interactive game
+  tictactoe --help     # Show this help message
+
+Game Modes:
+  1. Human vs Human - Two players take turns
+  2. Human vs AI    - Play against computer opponent
+  
+AI Difficulty Levels:
+  • Easy   - Random moves
+  • Medium - Blocks wins and takes available wins  
+  • Hard   - Uses minimax algorithm for optimal play
+        """,
+    )
+    
+    parser.add_argument(
+        "--version", 
+        action="version", 
+        version="tic-tac-toe 0.1.0"
+    )
+    
+    args = parser.parse_args()
+    
     try:
         cli = CLI()
         cli.run()

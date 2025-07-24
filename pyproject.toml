@@ -3,13 +3,21 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "tictactoe"
+name = "tictactoe-vish"
 version = "0.1.0"
-description = "A Tic-Tac-Toe Game using Python"
+description = "A modern, well-tested Tic-Tac-Toe game implementation in Python with CLI interface and AI opponent"
 readme = "README.md"
 requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Vishwas", email = "your.email@example.com"}
+]
+maintainers = [
+    {name = "Vishwas", email = "your.email@example.com"}
+]
+keywords = ["game", "tic-tac-toe", "ai", "minimax", "cli"]
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 4 - Beta",
     "Intended Audience :: End Users/Desktop",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
@@ -19,8 +27,16 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Topic :: Games/Entertainment :: Board Games",
+    "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/v-s-v-i-s-h-w-a-s/tic-tac-toe"
+Repository = "https://github.com/v-s-v-i-s-h-w-a-s/tic-tac-toe"
+Issues = "https://github.com/v-s-v-i-s-h-w-a-s/tic-tac-toe/issues"
+Changelog = "https://github.com/v-s-v-i-s-h-w-a-s/tic-tac-toe/releases"
 
 [project.optional-dependencies]
 dev = [

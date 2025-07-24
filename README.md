@@ -22,10 +22,10 @@ A well-tested Tic-Tac-Toe game implementation in Python with a CLI interface and
 
 ## Installation
 
-### From PyPI (when published)
+### From PyPI
 
 ```bash
-pip install tictactoe
+pip install tictactoe-vish
 ```
 
 ### Development Installation
