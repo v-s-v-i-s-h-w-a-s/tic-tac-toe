@@ -1,0 +1,70 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Documentation
+*.md text diff=markdown
+*.txt text
+*.rst text
+*.pdf -text
+
+# Python code
+*.py text diff=python
+*.pyx text diff=python
+*.pyd binary
+*.so binary
+*.pyc binary
+*.pyo binary
+
+# Graphics
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg text
+
+# Scripts
+*.sh text eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Configuration
+*.yml text
+*.yaml text
+*.json text
+*.toml text
+*.ini text
+*.cfg text
+.pre-commit-config.yaml text
+.gitignore text
+.gitattributes text
+
+# Special files
+LICENSE text
+Makefile text
+CHANGELOG.md text
+README.md text
+pyproject.toml text
+
+# Docker
+Dockerfile text
+.dockerignore text
+
+# GitHub specific
+.github/**/* text
+
+# Ensure these files are treated as binary
+*.db binary
+*.p binary
+*.pkl binary
+*.pickle binary
+*.npy binary
+*.npz binary
+
+# Exclude from language stats
+docs/* linguist-documentation
+*.md linguist-documentation=false
+README.md linguist-documentation=false
+CHANGELOG.md linguist-documentation=false
+CONTRIBUTING.md linguist-documentation=false

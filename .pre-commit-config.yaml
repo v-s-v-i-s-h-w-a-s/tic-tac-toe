@@ -4,31 +4,86 @@ repos:
     hooks:
       - id: black
         language_version: python3
+        description: "Black: The uncompromising Python code formatter"
 
   - repo: https://github.com/pycqa/isort
     rev: 5.13.2
     hooks:
       - id: isort
         args: ["--profile", "black"]
+        description: "isort: Sort Python imports alphabetically within logical sections"
 
   - repo: https://github.com/pycqa/flake8
     rev: 7.0.0
     hooks:
       - id: flake8
-        additional_dependencies: [flake8-docstrings]
+        additional_dependencies:
+          - flake8-docstrings
+          - flake8-bugbear
+          - flake8-comprehensions
+          - flake8-simplify
+          - flake8-bandit
+        description: "flake8: Tool for style guide enforcement and linting"
 
   - repo: https://github.com/pycqa/pylint
     rev: v3.0.3
     hooks:
       - id: pylint
         args: [--rcfile=pyproject.toml]
+        description: "pylint: Python static code analysis tool"
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.8.0
+    hooks:
+      - id: mypy
+        additional_dependencies:
+          - types-requests
+        description: "mypy: Static type checker for Python"
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.5.0
     hooks:
       - id: trailing-whitespace
+        description: "Ensures that files don't contain trailing whitespace"
       - id: end-of-file-fixer
+        description: "Ensures that files end with a newline"
       - id: check-yaml
+        description: "Checks yaml files for syntax errors"
+      - id: check-json
+        description: "Checks json files for syntax errors"
+      - id: check-toml
+        description: "Checks toml files for syntax errors"
       - id: check-added-large-files
+        description: "Prevents giant files from being committed"
       - id: check-merge-conflict
+        description: "Check for merge conflict markers"
       - id: debug-statements
+        description: "Check for debugger imports and breakpoints"
+      - id: detect-private-key
+        description: "Detect if private key is added to repo"
+      - id: check-ast
+        description: "Validate Python AST to verify valid syntax"
+      - id: check-executables-have-shebangs
+        description: "Ensures that executable files have shebangs"
+
+  - repo: https://github.com/pycqa/bandit
+    rev: 1.7.7
+    hooks:
+      - id: bandit
+        exclude: "tests/"
+        description: "Security oriented static analyzer for Python code"
+
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.2.6
+    hooks:
+      - id: codespell
+        additional_dependencies:
+          - tomli
+        description: "Checks for common misspellings in text files"
+
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v3.15.0
+    hooks:
+      - id: pyupgrade
+        args: [--py38-plus]
+        description: "Automatically upgrade syntax to newer Python versions"
