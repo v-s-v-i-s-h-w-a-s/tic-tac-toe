@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  tictactoe:
+    build: .
+    image: tictactoe:latest
+    container_name: tictactoe-game
+    stdin_open: true
+    tty: true
+    restart: "no"
+
+  # Optional: Test container that runs once and exits
+  tictactoe-test:
+    build: .
+    image: tictactoe:latest
+    container_name: tictactoe-test
+    stdin_open: true
+    tty: false
+    restart: "no"
+    command: python -c "import src.tictactoe; print('✅ Package loads successfully'); from src.tictactoe.board import Board; b = Board(); print('✅ Board creates successfully'); from src.tictactoe.ai import AIPlayer; ai = AIPlayer(); print('✅ AI creates successfully'); print('🎮 Container is ready!')"
