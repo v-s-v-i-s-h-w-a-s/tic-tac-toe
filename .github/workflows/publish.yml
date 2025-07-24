@@ -4,11 +4,11 @@ on:
   release:
     types: [published]
   push:
-    tags: ['v*']
+    tags: ["v*"]
   workflow_dispatch:
     inputs:
       test_pypi:
-        description: 'Publish to Test PyPI instead'
+        description: "Publish to Test PyPI instead"
         required: false
         default: false
         type: boolean

@@ -75,7 +75,8 @@ This guide will help you publish your tic-tac-toe project to both **Docker Hub**
    
    ## Docker
    ```bash
-   docker run vishwas812/tic-tac-toe:latest
+   # IMPORTANT: Use -it flags for interactive terminal
+   docker run -it vishwas812/tic-tac-toe:latest
    ```
    ```
 6. Click **Publish release**
@@ -109,6 +110,7 @@ tictactoe --help
 ### Test Docker Image:
 ```bash
 docker pull vishwas812/tic-tac-toe:latest
+# IMPORTANT: Use -it for interactive terminal
 docker run --rm -it vishwas812/tic-tac-toe:latest
 ```
 
@@ -135,6 +137,12 @@ docker run --rm -it vishwas812/tic-tac-toe:latest
 1. Verify Docker Hub credentials
 2. Check repository name format
 3. Ensure repository exists on Docker Hub
+
+### If Docker Container Shows EOFError:
+1. **Always use `-it` flags**: `docker run -it <image_name>`
+2. **In Docker Desktop**: Enable "Allocate a TTY" in settings
+3. **From command line**: Use `docker run -it` not just `docker run`
+4. **Alternative**: Use `docker run <image_name> --help` to see options
 
 ## 📝 **Next Steps**
 
